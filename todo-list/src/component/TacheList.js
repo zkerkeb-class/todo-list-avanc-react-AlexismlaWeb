@@ -1,6 +1,7 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useCallback } from 'react';
 import useTasks from '../hooks/useTasks';
-import '../TachesList.css';
+import '../TachesList.css'; // Assurez-vous d'importer le fichier CSS
+
 function TacheList() {
     const { state, addTask, setState, updateTask, supprimerTache } = useTasks([]);
     const [newTask, setNewTask] = useState('');
@@ -18,7 +19,8 @@ function TacheList() {
         localStorage.setItem('tasks', JSON.stringify(state.taches));
     }, [state.taches]);
 
-    const handleAddTask = () => {
+    // Refactorisation des fonctions avec useCallback
+    const handleAddTask = useCallback(() => {
         const task = {
             id: Date.now(),
             title: newTask,
@@ -26,9 +28,9 @@ function TacheList() {
         };
         addTask(task);
         setNewTask('');
-    };
+    }, [newTask, addTask]); // Ajoutez newTask et addTask comme dépendances
 
-    const handleToggleTaskCompletion = (taskId) => {
+    const handleToggleTaskCompletion = useCallback((taskId) => {
         const taskToUpdate = state.taches.find(task => task.id === taskId);
         if (taskToUpdate) {
             updateTask({
@@ -36,11 +38,11 @@ function TacheList() {
                 fait: !taskToUpdate.fait,
             });
         }
-    };
+    }, [state.taches, updateTask]); // Ajoutez state.taches et updateTask comme dépendances
 
-    const handleDeleteTask = (taskId) => {
+    const handleDeleteTask = useCallback((taskId) => {
         supprimerTache(taskId);
-    };
+    }, [supprimerTache]); // Ajoutez supprimerTache comme dépendance
 
     const filteredTasks = useMemo(() => {
         switch (filter) {
