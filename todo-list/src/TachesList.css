@@ -1,0 +1,107 @@
+.tache-list {
+    max-width: 600px; /* Largeur maximale pour le conteneur principal */
+    margin: 0 auto; /* Centrer le conteneur */
+    padding: 20px; /* Ajout de remplissage */
+    background-color: #f9f9f9; /* Couleur de fond */
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+.title {
+    text-align: center; /* Centrer le titre */
+    font-family: 'Arial', sans-serif; /* Police */
+    color: #333; /* Couleur du texte */
+}
+
+.filter-buttons {
+    display: flex; /* Flexbox pour aligner les boutons */
+    justify-content: center; /* Centrer les boutons */
+    margin-bottom: 20px; /* Espace en dessous des boutons */
+}
+
+.filter-button {
+    margin: 0 5px; /* Marge entre les boutons */
+    padding: 10px 15px; /* Remplissage des boutons */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    background-color: #007bff; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte */
+    cursor: pointer; /* Curseur en forme de main */
+    transition: background-color 0.3s; /* Animation de changement de couleur */
+}
+
+.filter-button:hover {
+    background-color: #0056b3; /* Couleur au survol */
+}
+
+.input-container {
+    display: flex; /* Flexbox pour aligner l'input et le bouton */
+    justify-content: space-between; /* Espace entre les éléments */
+}
+
+.task-input {
+    flex: 1; /* Prendre tout l'espace disponible */
+    padding: 10px; /* Remplissage */
+    border: 1px solid #ccc; /* Bordure grise */
+    border-radius: 5px; /* Coins arrondis */
+    margin-right: 10px; /* Espace à droite */
+}
+
+.add-button {
+    padding: 10px 15px; /* Remplissage du bouton */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    background-color: #28a745; /* Couleur de fond verte */
+    color: white; /* Couleur du texte */
+    cursor: pointer; /* Curseur en forme de main */
+    transition: background-color 0.3s; /* Animation de changement de couleur */
+}
+
+.add-button:hover {
+    background-color: #218838; /* Couleur au survol */
+}
+
+.task-list {
+    list-style: none; /* Pas de puces */
+    padding: 0; /* Pas de remplissage */
+}
+
+.task-item {
+    display: flex; /* Flexbox pour aligner les éléments de la tâche */
+    justify-content: space-between; /* Espace entre les éléments */
+    padding: 10px; /* Remplissage */
+    border-bottom: 1px solid #eee; /* Bordure en bas */
+}
+
+.task-title {
+    flex: 1; /* Prendre tout l'espace disponible */
+    color: #333;
+}
+
+.completed {
+    text-decoration: line-through; /* Barré pour les tâches terminées */
+    color: #999; /* Couleur grise pour les tâches terminées */
+}
+
+.action-button {
+    padding: 5px 10px; /* Remplissage des boutons d'action */
+    border: none; /* Pas de bordure */
+    border-radius: 5px; /* Coins arrondis */
+    background-color: #007bff; /* Couleur de fond du bouton d'action */
+    color: white; /* Couleur du texte */
+    cursor: pointer; /* Curseur en forme de main */
+    transition: background-color 0.3s; /* Animation de changement de couleur */
+    margin-left: 10px; /* Espace à gauche */
+}
+
+.action-button:hover {
+    background-color: #0056b3; /* Couleur au survol */
+}
+
+.delete-button {
+    background-color: #dc3545; /* Couleur de fond rouge pour le bouton supprimer */
+}
+
+.delete-button:hover {
+    background-color: #c82333; /* Couleur au survol pour le bouton supprimer */
+}
